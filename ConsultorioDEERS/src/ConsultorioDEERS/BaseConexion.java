@@ -6,11 +6,12 @@
 package ConsultorioDEERS;
 
 //librerias para la conexion de la base
+//import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+//import java.sql.Statement;
 
 /**
  *
@@ -34,6 +35,7 @@ public class BaseConexion {
     //Hace la conexion con la base de datos en la nube
     public void conexion() {
         try {
+//            Class.forName(driver);
             conn = DriverManager.getConnection(url, usuario, password);
             System.out.println("Conexión exitosa");
         } catch (SQLException e) {
@@ -44,15 +46,14 @@ public class BaseConexion {
 
     //El metodo comprueba que la base de datos este abierta
     public void comprobarConexion() {
-        
-         //comprueba que la conexion no sea nula
+
+        //comprueba que la conexion no sea nula
         if (conn != null) {
 
             System.out.println("Conexion abierta");
-        } 
-        //si es nula, manda a llamar a la funcion que la abre
+        } //si es nula, manda a llamar a la funcion que la abre
         else {
-            System.out.println("Conexion Cerrada- Abriendoooooo");
+            System.out.println("Conexion Cerrada- Abriendo-");
             conexion();
         }
     }
