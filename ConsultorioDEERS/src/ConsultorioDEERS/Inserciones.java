@@ -17,9 +17,6 @@ public class Inserciones extends BaseConexion {
     java.sql.Date fechaActual = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 
     //Registra los datos personales usuarios que manejaran el sistema
-    
-    
-    
     public int insertar_datosPerUsuarios(String nombre, String ap_paterno, String ap_materno, int edad, String tel, String direccion) throws SQLException {
 
         //comprombamos que este abierta
@@ -45,6 +42,8 @@ public class Inserciones extends BaseConexion {
             //se comprueba que si se haya registrado
             if (st.executeUpdate() > 0) {
                 System.out.println("Datos Registrados correctamente");
+            } else {
+                System.out.println("No se pudieron actualizar los datos");
             }
 
         } catch (SQLException e) {
@@ -103,6 +102,8 @@ public class Inserciones extends BaseConexion {
             if (st.executeUpdate() > 0) {
                 System.out.println("Registro Completado Correctamente");
 
+            } else {
+                System.out.println("No se pudieron registrar los datos is usuario");
             }
 
         } catch (SQLException e) {

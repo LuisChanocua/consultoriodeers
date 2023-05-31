@@ -24,6 +24,13 @@ QUE LA BASE DE DATO ESTA CERRADA, PARA ESO SE OPTO POR MANTENER LA BASE ABIERTA
 public class Consultas extends BaseConexion {
 
     /*Este metodo verificará que el ususario exista en la base de datos*/
+    /**
+     * 
+     * @param correo
+     * @param password
+     * @return i: Comprobacion de registro o no
+     * @throws SQLException 
+     */
     public int comprobarExistenciaUsuario(String correo, String password) throws SQLException {
         int i = 0;
 
